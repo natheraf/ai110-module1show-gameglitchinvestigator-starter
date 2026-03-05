@@ -34,7 +34,7 @@ I decided the bugs were fixed by playing the game myself. I ran pytest and it sa
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 - What change did you make that finally gave the game a stable secret number?
 
----
+I never seen the secret number change. Streamlit reruns updates everything on screen while session state stores data between reruns. My game always had a stable secret number.
 
 ## 5. Looking ahead: your developer habits
 
@@ -42,3 +42,5 @@ I decided the bugs were fixed by playing the game myself. I ran pytest and it sa
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+I like the strategy of telling where the AI should look with comments. Maybe instead of comments, I can tell the AI exactly where with line numbers. One thing I can do differently next time is to take my time reviewing its planned changes. AI generated code always works less than 100% of the time.
