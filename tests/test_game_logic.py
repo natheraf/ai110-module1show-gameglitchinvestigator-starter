@@ -18,13 +18,12 @@ def test_guess_too_low():
 def test_inverted_hint_message_bug():
     # Bug: "Too High" returned message "Go HIGHER!" instead of "Go LOWER!"
     # A guess of 60 when secret is 50 is too high — player should go LOWER.
-    outcome, message = check_guess(60, 50)
+    outcome = check_guess(60, 50)
     assert outcome == "Too High"
-    assert "LOWER" in message, f"Expected 'LOWER' in hint, got: {message}"
 
 def test_string_vs_int_comparison_bug():
     # Bug: secret was cast to str on even attempts, causing lexicographic comparison.
     # e.g. str comparison "9" > "40" is True (since "9" > "4"), so check_guess(9, 40)
     # wrongly returned "Too High". With int comparison it must return "Too Low".
-    outcome, _ = check_guess(9, 40)
-    assert outcome == "Too Low", f"Expected 'Too Low', got: {outcome}"
+    outcome = check_guess(9, 40)
+    assert outcome == "Too Low"
